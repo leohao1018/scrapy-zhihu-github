@@ -1,5 +1,5 @@
 #!/usr/bin/python
-#-*-coding:utf-8-*-
+# -*-coding:utf-8-*-
 
 import redis
 import time
@@ -44,7 +44,7 @@ class RFPDupeFilter(BaseDupeFilter):
         """
 
         fp = request_fingerprint(request)
-        if self.server.sismember(self.key,fp):
+        if self.server.sismember(self.key, fp):
             return True
         self.server.sadd(self.key, fp)
         return False

@@ -1,10 +1,9 @@
 #!/usr/bin/python
-#-*-coding:utf-8-*-
+# -*-coding:utf-8-*-
 
 import redis
 from scrapy.utils.misc import load_object
 from dupefilter import RFPDupeFilter
-
 
 # default values
 REDIS_HOST = 'localhost'

@@ -1,5 +1,5 @@
 #!/usr/bin/python
-#-*-coding:utf-8-*-
+# -*-coding:utf-8-*-
 
 from scrapy.utils.reqser import request_to_dict, request_from_dict
 
@@ -77,7 +77,7 @@ class SpiderPriorityQueue(Base):
     def push(self, request):
         """Push a request"""
         data = self._encode_request(request)
-        pairs = {data:-request.priority}
+        pairs = {data: -request.priority}
         self.server.zadd(self.key, **pairs)
 
     def pop(self):

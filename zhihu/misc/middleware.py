@@ -4,11 +4,11 @@ from zhihu.misc.proxy import PROXIES
 from zhihu.misc.agents import AGENTS
 import logging
 
-class CustomHttpProxyMiddleware(object):
 
+class CustomHttpProxyMiddleware(object):
     def process_request(self, request, spider):
         if self.use_proxy(request):
-            proxy =  random.choice(PROXIES)
+            proxy = random.choice(PROXIES)
             logging.info('Using proxy ' + proxy['ip_port'])
             request.meta['proxy'] = 'http://' + proxy['ip_port']
 
@@ -20,7 +20,7 @@ class CustomHttpProxyMiddleware(object):
         if "depth" in request.meta and int(request.meta['depth']) <= 2:
             return False
 
-        return random.randint(0, 99) >=30
+        return random.randint(0, 99) >= 30
 
 
 class CustomUserAgentMiddleware(object):
